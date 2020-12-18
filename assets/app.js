@@ -1,48 +1,13 @@
-// import
+import * as pictureObject from './module.js';
 
+console.log(pictureObject);
 
-// Automatic Slideshow
-var slideIndex = 0;
-showSlides();
+// const pictureAdder = () => {
+    document.getElementById("i1").setAttribute("src", pictureObject.img1);
+    document.getElementById("i2").setAttribute("src", pictureObject.img2);
+    document.getElementById("i3").setAttribute("src", pictureObject.img3);
+    document.getElementById("i4").setAttribute("src", pictureObject.img4);
+    document.getElementById("i5").setAttribute("src", pictureObject.img5);
+// };
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 5000);
-}
-
-// Show Slider Buttons
-function plusSlides(n) {
-    showSlidesButton(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlidesButton(slideIndex = n);
-}
-
-function showSlidesButton(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
+// pictureAdder();
